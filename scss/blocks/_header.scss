@@ -1,0 +1,391 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
+.header {
+    padding: 20px 0 19px;
+
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: $color-white;
+    z-index: 10;
+    transition: all 0.3s ease;
+
+    @include vp-1023 {
+        padding: 17px 0 16px;
+    }
+
+    .container {
+        max-width: 1728px;
+        padding: 0 50px;
+
+        @include vp-1023 {
+            padding: 0 20px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        @include vp-1023 {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &__left-col {
+        display: flex;
+        align-items: center;
+    }
+
+    &__menu {
+        display: flex; // Показываем на всех разрешениях
+        width: 60px;
+        height: 40px;
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: $color-blue-charcoa;
+        align-items: center;
+        justify-content: center;
+        margin: 0 70px 0 0;
+
+        @include vp-1023 {
+            width: 47px;
+            height: 20px;
+        }
+    }
+
+    &__menu-icon {
+        position: relative;
+        width: 60px;
+        height: 23px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+
+        span {
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: black;
+            border-radius: 2px;
+            transform-origin: center;
+            // Базовое закрытое состояние: три видимые полоски
+            opacity: 1;
+            transform: none;
+
+            // Закрытие (обратная последовательность): 1) разворот в линию, 2) показать центральную, 3) разъехать линии
+            transition: transform 0.25s ease, opacity 0.1s ease 0.25s,
+                top 0.25s ease 0.35s;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+            &:nth-child(2) {
+                top: 10px;
+            }
+            &:nth-child(3) {
+                top: 20px;
+            }
+        }
+
+        @include vp-1023 {
+            width: 47px;
+            height: 18px;
+        }
+    }
+
+    &__logo-link {
+        text-transform: uppercase;
+        display: flex;
+        color: $color-bright-red;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    &__logo-bold {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: 0.5px;
+        display: flex;
+    }
+
+    &__logo-thin {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: 0.5px;
+        display: flex;
+    }
+
+    &__right-col {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 40px;
+        font-size: 18px;
+        line-height: 22px;
+        position: relative;
+
+        @media (max-width: 1199px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        @include vp-1023 {
+            gap: 20px;
+            font-size: 14px;
+        }
+    }
+
+    &__link {
+        @include vp-767 {
+            display: none;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    /* Блок "Связь со мной" */
+    &__contact {
+        position: relative;
+    }
+
+    &__contact-btn {
+        background: none;
+        border: none;
+        color: inherit;
+        font-size: inherit;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: currentColor;
+            clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+            transition: clip-path 0.3s ease;
+        }
+
+        &:hover {
+            &::before {
+                clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+            }
+        }
+    }
+
+    &__contact-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: $color-white;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+        z-index: 10;
+        display: none;
+        flex-direction: column;
+        padding: 10px 0;
+
+        a {
+            padding: 8px 16px;
+            color: $color-midnight-express;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background-color: $color-gainsboro;
+            }
+        }
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    &__phone {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: currentColor;
+            clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+            transition: clip-path 0.3s ease;
+        }
+
+        &:hover {
+            &::before {
+                clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+            }
+        }
+    }
+
+    &__phone-text {
+        text-transform: uppercase;
+        @include vp-1023 {
+            display: none;
+        }
+    }
+
+    &__phone-icon {
+        height: 24px;
+        width: 24px;
+        display: none;
+
+        @include vp-1023 {
+            display: flex;
+        }
+    }
+
+    &__overlay {
+        display: block;
+        opacity: 0;
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        transition: opacity 0.3s;
+    }
+
+    &__menu-list {
+        // Десктопное меню - горизонтальное
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        @include vp-1023 {
+            // Мобильное меню - выпадающее
+            position: absolute;
+            top: 59px;
+            left: 0;
+            height: auto;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            background: var(--color-bg-card, #ffffff);
+            border: 1px solid $gray-border;
+            border-radius: 10px;
+            box-shadow: $shadow;
+            overflow: hidden;
+            z-index: 10;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity $transition-normal,
+                visibility $transition-normal, transform $transition-normal;
+        }
+    }
+
+    &__menu-link {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+        position: relative;
+
+        // Десктопные стили
+        &:hover {
+            color: $color-blue-charcoa;
+        }
+
+        // Подчеркивание для активной ссылки
+        &--active {
+            color: $color-blue-charcoa;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: $color-blue-charcoa;
+            }
+        }
+
+        @include vp-1023 {
+            // Мобильные стили
+            padding: 12px 16px;
+            border-bottom: 1px solid $gray-border;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: $color-gainsboro;
+            }
+
+            &--active::after {
+                display: none;
+            }
+        }
+    }
+
+    &--open {
+        .header__menu-icon {
+            span {
+                // Открытие: 1) свести линии к центру, 2) скрыть центральную, 3) повернуть в крест
+                transition: top 0.25s ease, opacity 0.1s ease 0.25s,
+                    transform 0.25s ease 0.35s;
+
+                &:nth-child(1) {
+                    top: 10px; // Сначала двигаем к центру
+                    transform: rotate(45deg); // Затем поворачиваем
+                }
+                &:nth-child(2) {
+                    opacity: 0; // Скрываем центральную линию
+                }
+                &:nth-child(3) {
+                    top: 10px; // Сначала двигаем к центру
+                    transform: rotate(-45deg); // Затем поворачиваем
+                }
+            }
+        }
+
+        .header__overlay {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @include vp-1023 {
+            .header__menu-list {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+    }
+}

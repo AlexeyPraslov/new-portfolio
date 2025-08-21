@@ -1,0 +1,86 @@
+@use "../global/variables" as *;
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem; // Добавляем отступ от других элементов в header__right-col
+
+    input {
+        display: none;
+    }
+
+    label {
+        width: $toggle-width;
+        height: $toggle-height;
+        border-radius: 999px;
+        background: $color-gainsboro; // Используем вашу переменную серого
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        position: relative;
+        display: block;
+        margin: 0;
+        transition: $transition-normal;
+
+        &:active .toggle-circle {
+            width: $circle-size + 2;
+        }
+    }
+
+    .toggle-circle {
+        width: $circle-size;
+        height: $circle-size;
+        border-radius: 50%;
+        background: $color-white;
+        box-shadow: $shadow;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(10%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: $transition-normal;
+    }
+
+    svg {
+        width: 14px;
+        position: absolute;
+        transition: $transition-normal;
+    }
+
+    .sun {
+        color: $sun-color;
+        margin-top: 0;
+        opacity: 1;
+    }
+
+    .moon {
+        margin-top: -150%;
+        color: $color-white;
+        opacity: 0;
+    }
+
+    // Dark mode styles
+    input[type="checkbox"]:checked + label {
+        background: $color-midnight-express-light;
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    input[type="checkbox"]:checked + label .toggle-circle {
+        left: 100%;
+        transform: translate(-110%, -50%);
+        background: $color-midnight-express;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    input[type="checkbox"]:checked + label .toggle-circle .sun {
+        margin-top: 150%;
+        opacity: 0;
+    }
+
+    input[type="checkbox"]:checked + label .toggle-circle .moon {
+        margin-top: 0;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- SEO Meta Tags -->
+  <title>Портфолио веб-разработчика | Создание современных сайтов</title>
+  <meta name="description"
+    content="Профессиональная разработка веб-сайтов и приложений. Современный дизайн, адаптивная верстка, оптимизация производительности. Посмотрите мои работы и свяжитесь для сотрудничества.">
+  <meta name="keywords" content="веб-разработчик, портфолио, создание сайтов, frontend, верстка, HTML, CSS, JavaScript">
+  <meta name="author" content="Веб-разработчик">
+
+
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#1c2331">
+  <meta name="msapplication-TileColor" content="#1c2331">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__content">
+        <!-- Левая часть: меню и логотип -->
+        <div class="header__left-col">
+          <button class="header__menu" type="button" aria-label="Переключатель меню" id="burger-toggle">
+            <span class="header__menu-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+          <a class="header__logo-link" href="index.html" aria-label="Переход на главную страницу">
+            <span class="header__logo-thin">my</span>
+            <span class="header__logo-bold">PORTFOLIO</span>
+          </a>
+
+          <!-- Выпадающее меню бургера -->
+          <div class="burger-dropdown" id="burger-dropdown">
+            <a class="burger-dropdown-link" href="index.html">ГЛАВНАЯ</a>
+            <a class="burger-dropdown-link" href="about.html">ОБО МНЕ</a>
+            <a class="burger-dropdown-link" href="skills.html">НАВЫКИ</a>
+            <a class="burger-dropdown-link" href="portfolio.html">ПОРТФОЛИО</a>
+            <a class="burger-dropdown-link" href="works.html">МОИ РАБОТЫ</a>
+            <a class="burger-dropdown-link" href="contact.html">КОНТАКТЫ</a>
+          </div>
+        </div>
+
+
+        <div class="header__right-col">
+          <!-- Переключатель темы -->
+          <div class="theme-toggle">
+            <input type="checkbox" id="toggle">
+            <label for="toggle">
+              <span class="toggle-circle">
+                <svg class="sun" width="24" height="24" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-sun"></use>
+                </svg>
+                <svg class="moon" width="24" height="24" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-moon"></use>
+                </svg>
+              </span>
+            </label>
+          </div>
+
+          <!-- Кнопка связи -->
+          <a class="header__phone" href="#" aria-label="Связь с нами" id="contact-toggle" aria-haspopup="true"
+            aria-expanded="false">
+            <span class="header__phone-text">Связь со мной</span>
+            <svg class="header__phone-icon" width="24" height="24" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#icon-message"></use>
+            </svg>
+          </a>
+
+          <!-- Выпадающее меню контактов -->
+          <div class="contact-dropdown" id="contact-dropdown">
+            <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+            <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">Перейти в соцсети</a>
+            <a href="mailto:your.email@example.com">Отправить письмо</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay для закрытия меню -->
+    <div class="header__overlay" hidden></div>
+  </header>
+  <main aria-label="сайт ПОРТФОЛИО">
+
+
+  </main>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Веб-разработчик",
+    "jobTitle": "Frontend Developer",
+    "description": "Профессиональный веб-разработчик, специализирующийся на создании современных и адаптивных веб-сайтов",
+    "url": "https://yourwebsite.com",
+    "knowsAbout": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "SCSS",
+      "Responsive Design",
+      "Web Development"
+    ],
+    "offers": {
+      "@type": "Service",
+      "name": "Веб-разработка",
+      "description": "Создание современных веб-сайтов и приложений"
+    }
+  }
+  </script>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

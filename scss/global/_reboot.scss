@@ -1,0 +1,43 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background: $bg-light;
+    color: $text-light;
+    transition: background-color 0.5s ease, color 0.5s ease;
+
+    &.theme-dark {
+        background: $bg-dark;
+        color: $text-dark;
+    }
+}
+
+main {
+    flex-grow: 1;
+    padding: 80px 0 0;
+
+    @include vp-1023 {
+        padding: 58px 0 0;
+    }
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+a {
+    color: $color-black;
+    text-decoration: none;
+}

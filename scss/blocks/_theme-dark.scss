@@ -1,0 +1,63 @@
+@use "sass:color";
+@use "../global/variables" as *;
+
+.theme-dark {
+    .header {
+        background-color: $color-midnight-express;
+        color: $color-white;
+        border-bottom-color: color.adjust(
+            $color-midnight-express,
+            $lightness: -5%
+        );
+
+        // Цвет иконки бургера
+        .header__menu-icon span {
+            background: $color-white;
+        }
+
+        // Логотип
+        .header__logo-link {
+            color: $color-bright-red;
+        }
+
+        // Кнопка "Связь со мной"
+        .header__phone {
+            color: $color-white;
+
+            &:hover {
+                color: $color-white;
+            }
+        }
+
+        .header__menu-link {
+            color: $color-white;
+
+            &:hover {
+                background-color: rgba($color-white, 0.1);
+            }
+        }
+    }
+
+    // Выпадающее меню в тёмной теме
+    .header__contact-dropdown,
+    .contact-dropdown,
+    .burger-dropdown {
+        background: $color-midnight-express-light;
+        border: 1px solid
+            color.adjust($color-midnight-express, $lightness: -10%);
+
+        a {
+            color: $color-white;
+
+            &:hover {
+                background-color: rgba($color-white, 0.1);
+            }
+        }
+    }
+
+    .header__menu-list {
+        background: $color-midnight-express-light;
+        border: 1px solid
+            color.adjust($color-midnight-express, $lightness: -10%);
+    }
+}

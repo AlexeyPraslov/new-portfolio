@@ -1,0 +1,71 @@
+// ===================
+// 🎨 Colors
+// ===================
+
+// Base colors
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Grayscale & Neutrals
+$color-midnight-express: #1c2331;
+$color-midnight-express-light: #222a39;
+$color-blue-charcoa: #1d252d; // Исправлено: charcoa → charcoal
+$color-mischka: #a7a8aa;
+$color-iron: #cbcccc;
+$color-gainsboro: #e2e2e2;
+$gray-border: #cbcccc; // можно привязать к существующему цвету
+
+// Whites & Accents
+$color-chrome-white: #c8c4b5;
+$color-ecru-white: #d6d2c4;
+$color-twilight-blue: #f2f3ee;
+
+// Red (например, для акцентов)
+$color-bright-red: #9e2331;
+
+// Alpha colors
+$color-white-50: rgba(255, 255, 255, 0.5);
+
+// ===================
+// 🌓 Theme Colors
+// ===================
+$bg-light: $color-white;
+$text-light: $color-midnight-express;
+
+$bg-dark: $color-midnight-express;
+$text-dark: $color-twilight-blue; // Светлый текст на тёмном фоне
+
+// ===================
+// 🖋️ Typography
+// ===================
+$ff-imb-plex: "IBM Plex Sans", Arial, sans-serif;
+
+// ===================
+// 📱 Viewport Breakpoints
+// ===================
+$vp-tablet: 1023px;
+$vp-mobile: 767px;
+
+// ===================
+// ⏱️ Transitions
+// ===================
+$transition-normal: 0.3s ease;
+
+// Опционально: короткие и длинные переходы
+$transition-fast: 0.2s ease;
+$transition-slow: 0.5s ease;
+
+$shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+$text-color: $text-light; // или явно: #1c2331
+$gray-light: #f5f5f5; // или #e2e2e2, или любой подходящий светлый серый
+
+$toggle-width: 50px;
+$toggle-height: 26px;
+$circle-size: 22px;
+$transition: all 0.3s ease;
+$sun-color: #ffd600;
+
+$light-bg-secondary: #f3f3f3;
+$dark-bg-primary: #2c2c2f;
+$dark-bg-secondary: #1f1f21;
+$accent-color: #ffd600;

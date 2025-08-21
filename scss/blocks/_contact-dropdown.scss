@@ -1,0 +1,83 @@
+@use "../global/variables" as *;
+
+.contact-dropdown {
+    position: absolute;
+    top: 52px;
+    right: 0;
+    background: $color-white;
+    border: 1px solid $gray-border;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    overflow: hidden;
+    width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity $transition-normal, visibility $transition-normal,
+        transform $transition-normal;
+    z-index: 1000;
+
+    // Ссылки внутри выпадающего меню
+    a {
+        display: block;
+        padding: 12px 16px;
+        text-decoration: none;
+        color: $text-color;
+        font-size: 14px;
+        transition: background-color $transition-fast;
+
+        &:hover {
+            background-color: $gray-light;
+        }
+        &.burger-dropdown-link.active {
+            color: var(--color-accent, #667eea);
+            font-weight: 600;
+            text-shadow: 0 0 6px rgba(102, 126, 234, 0.7),
+                0 0 12px rgba(102, 126, 234, 0.5);
+        }
+    }
+
+    // Активное состояние — меню открыто
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+.burger-dropdown {
+    position: absolute;
+    top: 52px;
+    left: 0;
+    background: $color-white;
+    border: 1px solid $gray-border;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    overflow: hidden;
+    width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity $transition-normal, visibility $transition-normal,
+        transform $transition-normal;
+    z-index: 1000;
+
+    a {
+        display: block;
+        padding: 12px 16px;
+        text-decoration: none;
+        color: $text-color;
+        font-size: 14px;
+        transition: background-color $transition-fast;
+
+        &:hover {
+            background-color: $gray-light;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
