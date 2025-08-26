@@ -56,8 +56,8 @@
                         <a class="burger-dropdown-link" href="about.html">ОБО МНЕ</a>
                         <a class="burger-dropdown-link" href="skills.html">НАВЫКИ</a>
                         <a class="burger-dropdown-link" href="portfolio.html">ПОРТФОЛИО</a>
-                        <a class="burger-dropdown-link" href="works.html">МОИ РАБОТЫ</a>
-                        <a class="burger-dropdown-link" href="contact.html">КОНТАКТЫ</a>
+                        <a class="burger-dropdown-link" href="stages.html">ЭТАПЫ</a>
+
                     </div>
                 </div>
 
@@ -103,100 +103,82 @@
         <div class="header__overlay" hidden></div>
     </header>
     <main aria-label="Навыки">
-        <!-- Hero -->
-        <section class="skills-hero">
+        <section class="skills" aria-label="Группы навыков">
             <div class="container">
-                <h1>Навыки</h1>
-                <p>Что я применяю в работе каждый день: от семантики и адаптива до оптимизации производительности и
-                    автоматизации процессов.</p>
-            </div>
-        </section>
+                <div class="skills__wrapper">
+                    <h1 class="skills__title">Навыки</h1>
+                    <p class="skills__description">Что я применяю в работе каждый день: от семантики и адаптива до
+                        оптимизации производительности и автоматизации процессов.</p>
 
-        <!-- Группы навыков -->
-        <section class="skills-groups" aria-label="Группы навыков">
-            <div class="container">
-                <div class="skills-grid">
-                    <!-- Фронтенд -->
-                    <article class="skill-card" aria-labelledby="skill-frontend">
-                        <h2 id="skill-frontend">Фронтенд</h2>
-                        <ul class="skill-list">
-                            <li>
-                                <span>HTML5, семантика, a11y</span>
-                                <meter min="0" max="100" value="95" aria-label="HTML5 и доступность 95 из 100"></meter>
-                            </li>
-                            <li>
-                                <span>CSS3 / SCSS, BEM</span>
-                                <meter min="0" max="100" value="92" aria-label="CSS и SCSS 92 из 100"></meter>
-                            </li>
-                            <li>
-                                <span>JavaScript (ES6+)</span>
-                                <meter min="0" max="100" value="88" aria-label="JavaScript 88 из 100"></meter>
-                            </li>
-                            <li>
-                                <span>Адаптив и кроссбраузерность</span>
-                                <meter min="0" max="100" value="93" aria-label="Адаптивная верстка 93 из 100"></meter>
-                            </li>
-                            <li>
-                                <span>Оптимизация производительности</span>
-                                <meter min="0" max="100" value="86" aria-label="Производительность 86 из 100"></meter>
-                            </li>
-                        </ul>
-                    </article>
+                    <div class="skills__blocks">
+                        <!-- Фронтенд -->
+                        <div class="skills__block">
+                            <h2 class="skills__block-title">Фронтенд</h2>
+                            <ul class="skills__list">
+                                <li class="skills__item">
+                                    <span class="skills__name">HTML5, семантика, a11y</span>
+                                    <meter class="skills__meter" min="0" max="100" value="95"
+                                        aria-label="HTML5 и доступность 95 из 100"></meter>
+                                </li>
+                                <li class="skills__item">
+                                    <span class="skills__name">CSS3 / SCSS, BEM</span>
+                                    <meter class="skills__meter" min="0" max="100" value="92"
+                                        aria-label="CSS и SCSS 92 из 100"></meter>
+                                </li>
+                                <li class="skills__item">
+                                    <span class="skills__name">JavaScript (ES6+)</span>
+                                    <meter class="skills__meter" min="0" max="100" value="88"
+                                        aria-label="JavaScript 88 из 100"></meter>
+                                </li>
+                                <li class="skills__item">
+                                    <span class="skills__name">Адаптив и кроссбраузерность</span>
+                                    <meter class="skills__meter" min="0" max="100" value="93"
+                                        aria-label="Адаптивная верстка 93 из 100"></meter>
+                                </li>
+                                <li class="skills__item">
+                                    <span class="skills__name">Оптимизация производительности</span>
+                                    <meter class="skills__meter" min="0" max="100" value="86"
+                                        aria-label="Производительность 86 из 100"></meter>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <!-- Инструменты и сборка -->
-                    <article class="skill-card" aria-labelledby="skill-tools">
-                        <h2 id="skill-tools">Инструменты и сборка</h2>
-                        <ul class="skill-tags">
-                            <li>Git / GitHub</li>
-                            <li>Vite / Webpack</li>
-                            <li>ESLint / Stylelint / Prettier</li>
-                            <li>NPM / PNPM</li>
-                            <li>Figma</li>
-                            <li>SVG‑спрайты, иконки</li>
-                        </ul>
-                    </article>
+                        <!-- Инструменты и сборка -->
+                        <div class="skills__block">
+                            <h2 class="skills__block-title">Инструменты и сборка</h2>
+                            <ul class="skills__list skills__list--tags">
+                                <li class="skills__tag">Git / GitHub</li>
+                                <li class="skills__tag">Vite / Webpack</li>
+                                <li class="skills__tag">ESLint / Stylelint / Prettier</li>
+                                <li class="skills__tag">NPM / PNPM</li>
+                                <li class="skills__tag">Figma</li>
+                                <li class="skills__tag">SVG‑спрайты, иконки</li>
+                            </ul>
+                        </div>
 
-                    <!-- Качество и тестирование -->
-                    <article class="skill-card" aria-labelledby="skill-quality">
-                        <h2 id="skill-quality">Качество и проверка</h2>
-                        <ul class="skill-list">
-                            <li>Проверка доступности (WAI‑ARIA, контраст)</li>
-                            <li>Линтинг и форматирование кода</li>
-                            <li>Профилирование Lighthouse</li>
-                            <li>Best Practices (семантика, изображения, шрифты)</li>
-                        </ul>
-                    </article>
+                        <!-- Качество и тестирование -->
+                        <div class="skills__block">
+                            <h2 class="skills__block-title">Качество и проверка</h2>
+                            <ul class="skills__list">
+                                <li class="skills__item">Проверка доступности (WAI‑ARIA, контраст)</li>
+                                <li class="skills__item">Линтинг и форматирование кода</li>
+                                <li class="skills__item">Профилирование Lighthouse</li>
+                                <li class="skills__item">Best Practices (семантика, изображения, шрифты)</li>
+                            </ul>
+                        </div>
 
-                    <!-- Деплой и инфраструктура -->
-                    <article class="skill-card" aria-labelledby="skill-deploy">
-                        <h2 id="skill-deploy">Деплой и инфраструктура</h2>
-                        <ul class="skill-tags">
-                            <li>GitHub Actions (CI)</li>
-                            <li>Netlify / Vercel</li>
-                            <li>Статические сайты</li>
-                            <li>SEO‑мета, Open Graph</li>
-                        </ul>
-                    </article>
+                        <!-- Деплой и инфраструктура -->
+                        <div class="skills__block">
+                            <h2 class="skills__block-title">Деплой и инфраструктура</h2>
+                            <ul class="skills__list skills__list--tags">
+                                <li class="skills__tag">GitHub Actions (CI)</li>
+                                <li class="skills__tag">Netlify / Vercel</li>
+                                <li class="skills__tag">Статические сайты</li>
+                                <li class="skills__tag">SEO‑мета, Open Graph</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Краткая статистика -->
-        <section class="skills-stats" aria-label="Статистика опыта">
-            <div class="container">
-                <ul class="stats-list">
-                    <li><strong>50+ макетов</strong> свёрстано адаптивно</li>
-                    <li><strong>90+ баллов</strong> Lighthouse Performance на реальных проектах</li>
-                    <li><strong>100%</strong> соответствие макетам и гайдлайнам</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="skills-cta" aria-label="Связаться">
-            <div class="container">
-                <p>Есть задача или идея? Предложу архитектуру верстки, оценю сроки и запущу быстро.</p>
-                <p><a class="button" href="contact.html">Обсудить проект</a></p>
             </div>
         </section>
     </main>

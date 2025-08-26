@@ -1,11 +1,18 @@
-@use "sass:color";
-@use "../global/variables" as *;
+@import "../global/variables";
+
+.theme-dark {
+    .hero__text span {
+        color: $color-sulu;
+        display: inline-block;
+        animation: pulseGlowRedLight 0.6s ease-out 1.5s forwards;
+    }
+}
 
 .theme-dark {
     .header {
         background-color: $color-midnight-express;
         color: $color-white;
-        border-bottom-color: color.adjust(
+        border-bottom-color: adjust-color(
             $color-midnight-express,
             $lightness: -5%
         );
@@ -44,7 +51,7 @@
     .burger-dropdown {
         background: $color-midnight-express-light;
         border: 1px solid
-            color.adjust($color-midnight-express, $lightness: -10%);
+            adjust-color($color-midnight-express, $lightness: -10%);
 
         a {
             color: $color-white;
@@ -58,6 +65,11 @@
     .header__menu-list {
         background: $color-midnight-express-light;
         border: 1px solid
-            color.adjust($color-midnight-express, $lightness: -10%);
+            adjust-color($color-midnight-express, $lightness: -10%);
+    }
+
+    .hero__text span {
+        color: $color-sulu;
+        animation: pulseGlow 1s ease-out 1.5s forwards;
     }
 }

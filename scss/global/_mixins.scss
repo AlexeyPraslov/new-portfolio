@@ -1,4 +1,4 @@
-@use "variables" as *;
+@import "variables";
 
 @mixin vp-1023 {
     @media (max-width: $vp-tablet) {

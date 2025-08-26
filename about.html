@@ -56,8 +56,8 @@
                         <a class="burger-dropdown-link" href="about.html">ОБО МНЕ</a>
                         <a class="burger-dropdown-link" href="skills.html">НАВЫКИ</a>
                         <a class="burger-dropdown-link" href="portfolio.html">ПОРТФОЛИО</a>
-                        <a class="burger-dropdown-link" href="works.html">МОИ РАБОТЫ</a>
-                        <a class="burger-dropdown-link" href="contact.html">КОНТАКТЫ</a>
+                        <a class="burger-dropdown-link" href="stages.html">ЭТАПЫ</a>
+
                     </div>
                 </div>
 
@@ -104,101 +104,54 @@
     </header>
     <main aria-label="Обо мне">
         <!-- Hero -->
-        <section class="about-hero">
+        <section class="about">
             <div class="container">
-                <h1 class="about-hero__title">Привет! Я Алекс — фронтенд‑разработчик</h1>
-                <p class="about-hero__subtitle">Проектирую и разрабатываю интерфейсы, которые
-                    быстро загружаются, легко читаются и приятно ощущаются в использовании.</p>
-            </div>
-        </section>
+                <div class="about__content">
+                    <div class="about__left">
+                        <h1 class="about__title">Привет! Я Алексей — фронтенд‑разработчик</h1>
+                        <p class="about__description">Верстаю интерфейсы, которые быстро загружаются, легко читаются и
+                            приятно
+                            ощущаются в использовании. Работаю с БЭМ, адаптивной вёрсткой, CSS-анимациями, точным
+                            позиционированием и современными подходами — чтобы результат был не только красивым, но и
+                            качественным.</p>
 
-        <!-- Основной блок: текст + фото -->
-        <section class="about-content">
-            <div class="container">
-                <div class="about-content__grid">
-                    <div class="about-info">
-                        <h2 class="about-info__title">Кто я</h2>
-                        <div class="about-info__text">
-                            <p>Я создаю веб‑интерфейсы на базе HTML5, CSS/SCSS и современного JavaScript (ES6+).
-                                Моя сильная сторона — аккуратная верстка, чёткая структура кода и внимание к мелочам,
-                                которые делают продукт профессиональным.</p>
-                            <p>В работе опираюсь на семантику, доступность (a11y), производительность и
-                                консистентность. Забочусь о содержимом на всех брейкпоинтах, от шапки сайта до
-                                последнего интерактивного элемента.</p>
-                            <p>Люблю задачи, где важен результат: от быстрых лендингов до продуктовых интерфейсов,
-                                дизайн‑систем и UI‑компонентов.</p>
+                        <div class="about__blocks">
+                            <div class="about__block">
+                                <h2 class="about__subtitle">Что я умею</h2>
+                                <ul class="about__list">
+                                    <li>Адаптивная и кроссбраузерная вёрстка по макетам Figma</li>
+                                    <li>Чистый семантический HTML5 и аккуратный SCSS с БЭМ</li>
+                                    <li>Современные сетки: Flexbox и Grid, плавные CSS‑анимации</li>
+                                    <li>Оптимизация производительности: изображения, шрифты, Lighthouse</li>
+                                    <li>Базовый JavaScript для интерактивных элементов и UX‑мелочей</li>
+                                </ul>
+                            </div>
+
+                            <div class="about__block">
+                                <h2 class="about__subtitle">Чему учусь</h2>
+                                <ul class="about__list">
+                                    <li>Углубляю знания JavaScript (модули, паттерны, асинхронность)</li>
+                                    <li>Изучаю TypeScript для крупных проектов</li>
+                                    <li>Практикую доступность (a11y) и улучшение UX</li>
+                                    <li>Автоматизация: сборка и линтинг для стабильной разработки</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="about-photo">
-                        <div class="about-photo__wrapper">
-                            <img class="about-photo__img" src="images/developer-photo.jpg" alt="Фото разработчика">
-                        </div>
+                    <div class="about__right">
+                        <picture class="about__img-box">
+                            <img class="about__photo" src="images/section/about.webp"
+                                srcset="images/section/about@2x.webp 2x" alt="Моё фото" width="320" height="320"
+                                loading="lazy" decoding="async">
+                        </picture>
                     </div>
                 </div>
-
-                <!-- Факты/карточки -->
-                <div class="about-details">
-                    <div class="about-details__grid">
-                        <article class="about-card">
-                            <div class="about-card__icon">
-                                <svg width="28" height="28" aria-hidden="true">
-                                    <use xlink:href="images/sprite.svg#icon-code"></use>
-                                </svg>
-                            </div>
-                            <h3 class="about-card__title">Чистый код</h3>
-                            <p class="about-card__text">Понятные имена, модульная структура, предсказуемые стили и
-                                отсутствие «магии» там, где она не нужна.</p>
-                        </article>
-
-                        <article class="about-card">
-                            <div class="about-card__icon">
-                                <svg width="28" height="28" aria-hidden="true">
-                                    <use xlink:href="images/sprite.svg#icon-rocket"></use>
-                                </svg>
-                            </div>
-                            <h3 class="about-card__title">Скорость и UX</h3>
-                            <p class="about-card__text">Оптимизация изображений и шрифтов, продуманные анимации и
-                                быстрый first paint — всё ради плавного сценария пользователя.</p>
-                        </article>
-
-                        <article class="about-card">
-                            <div class="about-card__icon">
-                                <svg width="28" height="28" aria-hidden="true">
-                                    <use xlink:href="images/sprite.svg#icon-layers"></use>
-                                </svg>
-                            </div>
-                            <h3 class="about-card__title">Доступность</h3>
-                            <p class="about-card__text">Семантика, фокус‑состояния, контраст и клавиатурная навигация —
-                                чтобы продукт был комфортен для всех.</p>
-                        </article>
-                    </div>
-                </div>
-
-                <!-- Навыки -->
-                <section class="about-skills">
-                    <h2 class="about-skills__title">Технологии и инструменты</h2>
-                    <div class="about-skills__list">
-                        <span class="about-skills__item">HTML5 (семантика)</span>
-                        <span class="about-skills__item">CSS3 / SCSS (модульность)</span>
-                        <span class="about-skills__item">Адаптивный дизайн</span>
-                        <span class="about-skills__item">JavaScript (ES6+)</span>
-                        <span class="about-skills__item">Доступность (a11y)</span>
-                        <span class="about-skills__item">Производительность</span>
-                        <span class="about-skills__item">SVG‑иконки / спрайты</span>
-                        <span class="about-skills__item">BEM / архитектура</span>
-                    </div>
-                </section>
-
-                <!-- CTA -->
-                <section class="about-cta">
-                    <h2 class="about-cta__title">Обсудим ваш проект?</h2>
-                    <p class="about-cta__text">Опишите цель и контекст — предложу варианты реализации, сроки и
-                        прозрачный план работ.</p>
-                    <a class="about-cta__button" href="contact.html" aria-label="Перейти в контакты">Связаться</a>
-                </section>
             </div>
         </section>
+
+
+
     </main>
 
     <!-- Structured Data -->

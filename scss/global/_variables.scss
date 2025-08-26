@@ -19,9 +19,12 @@ $gray-border: #cbcccc; // можно привязать к существующ�
 $color-chrome-white: #c8c4b5;
 $color-ecru-white: #d6d2c4;
 $color-twilight-blue: #f2f3ee;
+$color-hawkes-blue: #dadbdc;
+$color-grey-chateau: #a3a4a5;
 
 // Red (например, для акцентов)
 $color-bright-red: #9e2331;
+$color-sulu: #c3e875;
 
 // Alpha colors
 $color-white-50: rgba(255, 255, 255, 0.5);
@@ -29,7 +32,7 @@ $color-white-50: rgba(255, 255, 255, 0.5);
 // ===================
 // 🌓 Theme Colors
 // ===================
-$bg-light: $color-white;
+$bg-light: $color-hawkes-blue;
 $text-light: $color-midnight-express;
 
 $bg-dark: $color-midnight-express;

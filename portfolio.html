@@ -56,8 +56,8 @@
                         <a class="burger-dropdown-link" href="about.html">ОБО МНЕ</a>
                         <a class="burger-dropdown-link" href="skills.html">НАВЫКИ</a>
                         <a class="burger-dropdown-link" href="portfolio.html">ПОРТФОЛИО</a>
-                        <a class="burger-dropdown-link" href="works.html">МОИ РАБОТЫ</a>
-                        <a class="burger-dropdown-link" href="contact.html">КОНТАКТЫ</a>
+                        <a class="burger-dropdown-link" href="stages.html">ЭТАПЫ</a>
+
                     </div>
                 </div>
 
@@ -103,12 +103,87 @@
         <div class="header__overlay" hidden></div>
     </header>
     <main aria-label="Портфолио">
+        <section class="portfolio"></section>
         <div class="container">
-            <h1>Портфолио</h1>
-            <p>Здесь будут представлены мои проекты и работы.</p>
-            <div class="portfolio-grid">
-                <!-- Здесь будут карточки проектов -->
-                <p>Примеры проектов будут добавлены позже.</p>
+            <div class="portfolio__wrapper">
+                <div class="portfolio__inner">
+                    <h1 class="portfolio__title">Портфолио</h1>
+                    <p class="portfolio__description">
+                        На этой странице представлены некоторые мои работы, в которых я применил современные подходы к
+                        вёрстке
+                        и разработке. Каждый проект свёрстан по методологии БЭМ (Block, Element, Modifier) — с чистой,
+                        понятной структурой кода, что обеспечивает его масштабируемость и удобство поддержки. В проектах
+                        активно используются CSS-переменные для гибкого управления темами и стилями, а также реализованы
+                        плавные анимации и эффекты наведения, придающие интерфейсу динамику и современный вид.
+                    </p>
+                    <p class="portfolio__description">
+                        Кроме чистого HTML и CSS, в некоторых работах применён JavaScript для интерактивности: слайдеры,
+                        плавные прокрутки, открытие/закрытие меню и другие микровзаимодействия. Уделено внимание
+                        доступности
+                        (a11y), семантической разметке и адаптивности под разные устройства.
+                    </p>
+                    <p class="portfolio__description">
+                        В своих проектах я стремлюсь к созданию не только красивых, но и функциональных интерфейсов,
+                        которые
+                        обеспечивают удобство и простоту использования. Я постоянно изучаю новые технологии и подходы,
+                        чтобы
+                        улучшать свои навыки и предлагать клиентам современные решения.
+                    </p>
+                </div>
+                <ul class="portfolio__list">
+                    <li class="portfolio__item">
+                        <a class="portfolio__link" href="https://alexeypraslov.github.io/first-portfolio/"
+                            target="_blank">
+                            <picture>
+                                <img src="images/portfolio/image-portfolio-1.webp"
+                                    srcset="images/portfolio/image-portfolio-1@2x.webp 2x" alt="portfolio-images"
+                                    width="300" height="474">
+                            </picture>
+                            <span class="portfolio__text">
+
+                                Адаптивная вёрстка, точно соответствующая макету (pixel perfect). Учтены все
+                                брейкпоинты: корректное отображение на&nbsp;мобильных, планшетах и&nbsp;десктопах.
+                                Структура построена по&nbsp;методологии БЭМ. Изображения подключены через `picture` с
+                                `srcset` для разных устройств, включая WebP. Использованы абсолютное
+                                и&nbsp;относительное позиционирование, `z-index`, трансформации
+                                и&nbsp;оверлеи&nbsp;&mdash; для точной стыковки элементов. Чистый, понятный код
+                                и&nbsp;визуально точная реализация.</span>
+                        </a>
+                    </li>
+
+                    <li class="portfolio__item">
+                        <a class="portfolio__link" href="https://alexeypraslov.github.io/landng-Sminex-syage-8-hard/"
+                            target="_blank">
+                            <picture>
+                                <img src="images/portfolio/image-portfolio-2.webp"
+                                    srcset="images/portfolio/image-portfolio-2@2x.webp 2x" alt="portfolio-images"
+                                    width="300" height="474">
+                            </picture>
+                            <span class="portfolio__text">Этот проект — адаптивный лендинг с плавным переключением
+                                отображения карточек из плитки в список и анимированным бургер-меню. Всё сделано чисто
+                                по БЭМ, с продуманной структурой, переменными в CSS и плавными переходами. Отличная
+                                демонстрация интерактивности на чистом JavaScript и внимания к деталям.</span>
+                        </a>
+                    </li>
+
+                    <li class="portfolio__item">
+                        <a class="portfolio__link" href="https://alexeypraslov.github.io/last-portfolio/"
+                            target="_blank">
+                            <picture>
+                                <img src="images/portfolio/image-portfolio-3.webp"
+                                    srcset="images/portfolio/image-portfolio-3@2x.webp 2x" alt="portfolio-images"
+                                    width="300" height="474">
+                            </picture>
+                            <span class="portfolio__text">Этот проект — яркий пример качественной вёрстки с акцентом на
+                                анимации. Здесь реализован плавный лоадер при загрузке страницы и множество внутренних
+                                анимационных эффектов: появление элементов при прокрутке, плавные переходы и
+                                анимированное бургер-меню. Всё сделано на чистом HTML, CSS и JavaScript с соблюдением
+                                БЭМ. Проект демонстрирует умение оживлять интерфейс и создавать запоминающийся
+                                визуальный опыт без излишеств — только осмысленная и плавная анимация.</span>
+                        </a>
+                    </li>
+
+                </ul>
             </div>
         </div>
     </main>

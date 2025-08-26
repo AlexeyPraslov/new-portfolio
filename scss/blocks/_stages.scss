@@ -1,0 +1,105 @@
+.stages {
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        justify-items: center;
+    }
+
+    &__item {
+        display: block;
+
+        &:nth-child(odd) {
+            justify-self: end;
+        }
+
+        &:nth-child(even) {
+            justify-self: start;
+        }
+    }
+
+    &__block {
+        position: relative;
+        display: block;
+        max-width: 350px;
+
+        aspect-ratio: 1;
+        overflow: hidden;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 1;
+        }
+
+        &:hover::before {
+            transform: translateY(0);
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    &__text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease 0.1s;
+        z-index: 2;
+        overflow-y: auto;
+        box-sizing: border-box;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    &__block:hover &__text {
+        opacity: 1;
+    }
+}

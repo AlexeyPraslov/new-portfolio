@@ -1,0 +1,141 @@
+.hero {
+    display: flex;
+    padding: 80px 0;
+    margin: 0 auto;
+
+    &__content {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 60px;
+
+        justify-content: center;
+        align-items: center;
+        padding: 80px 0;
+    }
+
+    &__left-col {
+        max-width: 600px;
+    }
+
+    &__title {
+        margin: 0 0 20px 0;
+    }
+
+    &__title span {
+        display: block;
+        font-size: 40px;
+        font-weight: 700;
+        text-transform: uppercase;
+        opacity: 0;
+    }
+    &__title span:nth-child(1) {
+        animation: slideInFromLeft 0.6s ease-out forwards;
+    }
+    &__title span:nth-child(2) {
+        animation: slideInFromRight 0.6s ease-out 0.2s forwards;
+    }
+    &__title span:nth-child(3) {
+        animation: slideInFromLeft 0.6s ease-out 0.4s forwards;
+    }
+
+    &__text {
+        font-size: 24px;
+        margin: 0 0 30px 0; // Увеличим отступ для кнопки
+        opacity: 0;
+        animation: slideInDown 0.8s ease-out 0.8s forwards;
+    }
+
+    &__text span {
+        font-weight: 700;
+        color: $color-bright-red;
+        animation: pulseGlow 0.6s ease-out 1.5s forwards;
+    }
+
+    &__btn {
+        background-color: #082c5c;
+        color: white;
+        display: block;
+        padding: 10px 15px;
+        width: fit-content;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        text-transform: uppercase;
+        animation: slideInDown 0.8s ease-out 1.2s forwards;
+        opacity: 0;
+        transform: translateY(50px);
+
+        &:hover,
+        &:focus-visible {
+            background-color: darken(#082c5c, 10%);
+        }
+    }
+
+    &__image {
+        display: block;
+        height: auto;
+        max-width: 100%;
+        object-fit: cover;
+        opacity: 0;
+        animation: slideInRight 1s ease-in-out forwards;
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-60px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(60px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(160px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        filter: drop-shadow(0 0 0 transparent);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 15px rgb(255, 255, 255));
+        scale: 1.1;
+    }
+
+    100% {
+        filter: drop-shadow(0 0 0 transparent);
+        scale: 1;
+    }
+}

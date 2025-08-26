@@ -1,21 +1,24 @@
 /* Global */
 /* ------------------------------------ */
-@use "global/_normalize";
-@use "global/_fonts";
-@use "global/_variables" as *;
-@use "global/_mixins" as *;
-@use "global/_reboot";
-@use "global/_container";
-@use "global/_visually-hidden";
+@import "global/_normalize";
+@import "global/_fonts";
+@import "global/_variables";
+@import "global/_mixins";
+@import "global/_reboot";
+@import "global/_container";
+@import "global/_visually-hidden";
 
 /* Blocks */
 /* ------------------------------------ */
-@use "blocks/_header";
-@use "blocks/_contact-dropdown";
-@use "blocks/_theme-dark";
-@use "blocks/_theme-toggle";
-@use "blocks/_about";
-@use "blocks/_skills";
-@use "blocks/_portfolio";
-@use "blocks/_works";
-@use "blocks/_contact";
+@import "blocks/_header";
+@import "blocks/_contact-dropdown";
+@import "blocks/_burger-dropdown";
+@import "blocks/_theme-dark";
+@import "blocks/_theme-toggle";
+@import "blocks/_about";
+@import "blocks/_skills";
+@import "blocks/_portfolio";
+
+@import "blocks/_contact";
+@import "blocks/_hero";
+@import "blocks/_stages";
