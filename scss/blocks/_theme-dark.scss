@@ -59,6 +59,15 @@
             &:hover {
                 background-color: rgba($color-white, 0.1);
             }
+
+            &.active {
+                color: #1677ff;
+                font-weight: 600;
+                text-shadow: 0 0 5px rgba(22, 119, 255, 0.9),
+                    0 0 10px rgba(22, 119, 255, 0.8),
+                    0 0 20px rgba(22, 119, 255, 0.7),
+                    0 0 40px rgba(22, 119, 255, 0.6);
+            }
         }
     }
 
