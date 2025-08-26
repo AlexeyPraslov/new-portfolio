@@ -127,19 +127,29 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const savedTheme = localStorage.getItem("theme");
             
-            // Если нет сохраненной темы, устанавливаем светлую по умолчанию
-            if (!savedTheme || savedTheme === "light") {
-                document.body.classList.remove("theme-dark");
-                if (themeToggle) themeToggle.checked = false;
-                localStorage.setItem("theme", "light");
-            } else if (savedTheme === "dark") {
+            // Принудительно устанавливаем светлую тему по умолчанию
+            document.body.classList.remove("theme-dark");
+            document.body.style.background = "#dadbdc";
+            document.body.style.color = "#1c2331";
+            
+            if (themeToggle) themeToggle.checked = false;
+            
+            // Если сохранена темная тема, применяем ее
+            if (savedTheme === "dark") {
                 document.body.classList.add("theme-dark");
+                document.body.style.background = "#1c2331";
+                document.body.style.color = "#f2f3ee";
                 if (themeToggle) themeToggle.checked = true;
+            } else {
+                // Убеждаемся что светлая тема сохранена
+                localStorage.setItem("theme", "light");
             }
         } catch (e) {
             // Fallback если localStorage недоступен
             console.warn("localStorage недоступен, используем светлую тему");
             document.body.classList.remove("theme-dark");
+            document.body.style.background = "#dadbdc";
+            document.body.style.color = "#1c2331";
             if (themeToggle) themeToggle.checked = false;
         }
     }
@@ -150,9 +160,13 @@ document.addEventListener("DOMContentLoaded", function () {
             try {
                 if (this.checked) {
                     document.body.classList.add("theme-dark");
+                    document.body.style.background = "#1c2331";
+                    document.body.style.color = "#f2f3ee";
                     localStorage.setItem("theme", "dark");
                 } else {
                     document.body.classList.remove("theme-dark");
+                    document.body.style.background = "#dadbdc";
+                    document.body.style.color = "#1c2331";
                     localStorage.setItem("theme", "light");
                 }
             } catch (e) {
@@ -160,8 +174,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Продолжаем работу без localStorage
                 if (this.checked) {
                     document.body.classList.add("theme-dark");
+                    document.body.style.background = "#1c2331";
+                    document.body.style.color = "#f2f3ee";
                 } else {
                     document.body.classList.remove("theme-dark");
+                    document.body.style.background = "#dadbdc";
+                    document.body.style.color = "#1c2331";
                 }
             }
         });
