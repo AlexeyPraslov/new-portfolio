@@ -1,3 +1,17 @@
+// Инициализация темы до загрузки DOM
+(function() {
+    // Принудительно устанавливаем светлую тему
+    document.documentElement.style.setProperty('--bg-color', '#ffffff');
+    document.documentElement.style.setProperty('--text-color', '#1c2331');
+    
+    // Для Samsung Internet - принудительно устанавливаем белый фон
+    if (document.body) {
+        document.body.style.backgroundColor = '#ffffff';
+        document.body.style.color = '#1c2331';
+        document.body.classList.remove('theme-dark');
+    }
+})();
+
 document.addEventListener("DOMContentLoaded", function () {
     // === Бургер-меню ===
     const burgerBtn = document.querySelector("#burger-toggle");
@@ -127,28 +141,30 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const savedTheme = localStorage.getItem("theme");
             
-            // Принудительно устанавливаем светлую тему по умолчанию
+            // Принудительно устанавливаем светлую тему (белый фон для Samsung)
             document.body.classList.remove("theme-dark");
-            document.body.style.background = "#dadbdc";
+            document.body.style.backgroundColor = "#ffffff";
             document.body.style.color = "#1c2331";
+            document.documentElement.style.setProperty('--bg-color', '#ffffff');
+            document.documentElement.style.setProperty('--text-color', '#1c2331');
             
             if (themeToggle) themeToggle.checked = false;
             
             // Если сохранена темная тема, применяем ее
             if (savedTheme === "dark") {
                 document.body.classList.add("theme-dark");
-                document.body.style.background = "#1c2331";
+                document.body.style.backgroundColor = "#1c2331";
                 document.body.style.color = "#f2f3ee";
+                document.documentElement.style.setProperty('--bg-color', '#1c2331');
+                document.documentElement.style.setProperty('--text-color', '#f2f3ee');
                 if (themeToggle) themeToggle.checked = true;
             } else {
-                // Убеждаемся что светлая тема сохранена
                 localStorage.setItem("theme", "light");
             }
         } catch (e) {
-            // Fallback если localStorage недоступен
             console.warn("localStorage недоступен, используем светлую тему");
             document.body.classList.remove("theme-dark");
-            document.body.style.background = "#dadbdc";
+            document.body.style.backgroundColor = "#ffffff";
             document.body.style.color = "#1c2331";
             if (themeToggle) themeToggle.checked = false;
         }
@@ -160,25 +176,28 @@ document.addEventListener("DOMContentLoaded", function () {
             try {
                 if (this.checked) {
                     document.body.classList.add("theme-dark");
-                    document.body.style.background = "#1c2331";
+                    document.body.style.backgroundColor = "#1c2331";
                     document.body.style.color = "#f2f3ee";
+                    document.documentElement.style.setProperty('--bg-color', '#1c2331');
+                    document.documentElement.style.setProperty('--text-color', '#f2f3ee');
                     localStorage.setItem("theme", "dark");
                 } else {
                     document.body.classList.remove("theme-dark");
-                    document.body.style.background = "#dadbdc";
+                    document.body.style.backgroundColor = "#ffffff";
                     document.body.style.color = "#1c2331";
+                    document.documentElement.style.setProperty('--bg-color', '#ffffff');
+                    document.documentElement.style.setProperty('--text-color', '#1c2331');
                     localStorage.setItem("theme", "light");
                 }
             } catch (e) {
                 console.warn("Ошибка при сохранении темы:", e);
-                // Продолжаем работу без localStorage
                 if (this.checked) {
                     document.body.classList.add("theme-dark");
-                    document.body.style.background = "#1c2331";
+                    document.body.style.backgroundColor = "#1c2331";
                     document.body.style.color = "#f2f3ee";
                 } else {
                     document.body.classList.remove("theme-dark");
-                    document.body.style.background = "#dadbdc";
+                    document.body.style.backgroundColor = "#ffffff";
                     document.body.style.color = "#1c2331";
                 }
             }
@@ -191,9 +210,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 try {
                     if (this.checked) {
                         document.body.classList.add("theme-dark");
+                        document.body.style.backgroundColor = "#1c2331";
+                        document.body.style.color = "#f2f3ee";
                         localStorage.setItem("theme", "dark");
                     } else {
                         document.body.classList.remove("theme-dark");
+                        document.body.style.backgroundColor = "#ffffff";
+                        document.body.style.color = "#1c2331";
                         localStorage.setItem("theme", "light");
                     }
                 } catch (e) {
