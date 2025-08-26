@@ -3,7 +3,11 @@
 .theme-toggle {
     display: flex;
     align-items: center;
-    margin-left: 1rem; // Добавляем отступ от других элементов в header__right-col
+    margin-left: 1rem;
+    
+    @include vp-480 {
+        margin-left: 0.5rem;
+    }
 
     input {
         display: none;
@@ -13,16 +17,25 @@
         width: $toggle-width;
         height: $toggle-height;
         border-radius: 999px;
-        background: $color-gainsboro; // Используем вашу переменную серого
+        background: $color-gainsboro;
         box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
         cursor: pointer;
         position: relative;
         display: block;
         margin: 0;
         transition: $transition-normal;
+        
+        @include vp-480 {
+            width: 40px;
+            height: 20px;
+        }
 
         &:active .toggle-circle {
             width: $circle-size + 2;
+            
+            @include vp-480 {
+                width: 18px;
+            }
         }
     }
 
@@ -41,12 +54,21 @@
         justify-content: center;
         overflow: hidden;
         transition: $transition-normal;
+        
+        @include vp-480 {
+            width: 16px;
+            height: 16px;
+        }
     }
 
     svg {
         width: 14px;
         position: absolute;
         transition: $transition-normal;
+        
+        @include vp-480 {
+            width: 10px;
+        }
     }
 
     .sun {

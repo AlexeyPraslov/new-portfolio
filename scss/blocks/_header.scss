@@ -20,6 +20,10 @@
         @include vp-1023 {
             padding: 0 20px;
         }
+        
+        @include vp-480 {
+            padding: 0 15px;
+        }
     }
 
     &__content {
@@ -54,6 +58,11 @@
         @include vp-1023 {
             width: 47px;
             height: 20px;
+        }
+        
+        @include vp-480 {
+            margin: 0 20px 0 0;
+            width: 40px;
         }
     }
 
@@ -139,6 +148,11 @@
         @include vp-1023 {
             gap: 20px;
             font-size: 14px;
+        }
+        
+        @include vp-480 {
+            gap: 10px;
+            font-size: 12px;
         }
     }
 

@@ -124,23 +124,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Инициализация темы при загрузке
     function initTheme() {
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === "dark") {
-            document.body.classList.add("theme-dark");
-            if (themeToggle) themeToggle.checked = true;
+        try {
+            const savedTheme = localStorage.getItem("theme");
+            
+            // Если нет сохраненной темы, устанавливаем светлую по умолчанию
+            if (!savedTheme || savedTheme === "light") {
+                document.body.classList.remove("theme-dark");
+                if (themeToggle) themeToggle.checked = false;
+                localStorage.setItem("theme", "light");
+            } else if (savedTheme === "dark") {
+                document.body.classList.add("theme-dark");
+                if (themeToggle) themeToggle.checked = true;
+            }
+        } catch (e) {
+            // Fallback если localStorage недоступен
+            console.warn("localStorage недоступен, используем светлую тему");
+            document.body.classList.remove("theme-dark");
+            if (themeToggle) themeToggle.checked = false;
         }
     }
 
     // Применение темы при изменении переключателя
     if (themeToggle) {
         themeToggle.addEventListener("change", function () {
-            if (this.checked) {
-                document.body.classList.add("theme-dark");
-                localStorage.setItem("theme", "dark");
-            } else {
-                document.body.classList.remove("theme-dark");
-                localStorage.setItem("theme", "light");
+            try {
+                if (this.checked) {
+                    document.body.classList.add("theme-dark");
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    document.body.classList.remove("theme-dark");
+                    localStorage.setItem("theme", "light");
+                }
+            } catch (e) {
+                console.warn("Ошибка при сохранении темы:", e);
+                // Продолжаем работу без localStorage
+                if (this.checked) {
+                    document.body.classList.add("theme-dark");
+                } else {
+                    document.body.classList.remove("theme-dark");
+                }
             }
+        });
+        
+        // Дополнительный обработчик для мобильных устройств
+        themeToggle.addEventListener("click", function () {
+            // Принудительно обновляем состояние через небольшую задержку
+            setTimeout(() => {
+                try {
+                    if (this.checked) {
+                        document.body.classList.add("theme-dark");
+                        localStorage.setItem("theme", "dark");
+                    } else {
+                        document.body.classList.remove("theme-dark");
+                        localStorage.setItem("theme", "light");
+                    }
+                } catch (e) {
+                    console.warn("Ошибка при сохранении темы:", e);
+                }
+            }, 50);
         });
     }
 

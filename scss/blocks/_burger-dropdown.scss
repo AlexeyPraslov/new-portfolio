@@ -14,6 +14,11 @@
     transition: opacity $transition-normal, visibility $transition-normal,
         transform $transition-normal;
     z-index: 1000;
+    
+    @include vp-480 {
+        width: 180px;
+        top: 45px;
+    }
 
     a {
         display: block;
@@ -23,6 +28,11 @@
         font-size: 14px;
         transition: background-color $transition-fast, color 0.3s ease,
             text-shadow 0.3s ease;
+        
+        @include vp-480 {
+            padding: 10px 12px;
+            font-size: 12px;
+        }
 
         &:hover {
             background-color: $gray-light;

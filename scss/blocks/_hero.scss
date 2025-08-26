@@ -2,6 +2,8 @@
     display: flex;
     padding: 80px 0;
     margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
 
     @include vp-1023 {
         padding: 60px 0;
@@ -13,8 +15,10 @@
 
     &__content {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr 1fr;
         gap: 60px;
+        max-width: 100%;
+        overflow: hidden;
 
         justify-content: center;
         align-items: center;
@@ -29,6 +33,11 @@
             padding: 40px 0;
             gap: 20px;
             grid-template-columns: 1fr;
+        }
+        
+        @include vp-480 {
+            padding: 30px 0;
+            gap: 15px;
         }
     }
 
@@ -70,6 +79,10 @@
         @media (max-width: 530px) {
             font-size: 22px;
         }
+        
+        @include vp-480 {
+            font-size: 18px;
+        }
     }
     &__title span:nth-child(1) {
         animation: slideInFromLeft 0.6s ease-out forwards;
@@ -101,6 +114,10 @@
 
         @include vp-767 {
             text-align: center;
+        }
+        
+        @include vp-480 {
+            font-size: 16px;
         }
     }
 
@@ -173,7 +190,7 @@
 
 @keyframes slideInRight {
     0% {
-        transform: translateX(160px);
+        transform: translateX(60px);
         opacity: 0;
     }
     100% {

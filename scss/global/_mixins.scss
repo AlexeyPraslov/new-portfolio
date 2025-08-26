@@ -11,3 +11,9 @@
         @content;
     }
 }
+
+@mixin vp-480 {
+    @media (max-width: $vp-small) {
+        @content;
+    }
+}
