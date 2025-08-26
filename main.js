@@ -229,6 +229,20 @@ document.addEventListener("DOMContentLoaded", function () {
     // Запуск инициализации темы
     initTheme();
 
+    // === Удаление target="_blank" на мобильных устройствах ===
+    function removeMobileTargetBlank() {
+        if (window.innerWidth <= 768) {
+            const portfolioLinks = document.querySelectorAll('.portfolio__link');
+            portfolioLinks.forEach(link => {
+                link.removeAttribute('target');
+            });
+        }
+    }
+
+    // Вызываем при загрузке и изменении размера окна
+    removeMobileTargetBlank();
+    window.addEventListener('resize', removeMobileTargetBlank);
+
     // === Блок "Связь со мной" ===
     const contactBtn = document.querySelector("#contact-toggle");
     const contactDropdown = document.querySelector("#contact-dropdown");
