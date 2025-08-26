@@ -1,12 +1,12 @@
 // Инициализация темы до загрузки DOM
 (function() {
     // Принудительно устанавливаем светлую тему
-    document.documentElement.style.setProperty('--bg-color', '#ffffff');
+    document.documentElement.style.setProperty('--bg-color', '#dadbdc');
     document.documentElement.style.setProperty('--text-color', '#1c2331');
     
-    // Для Samsung Internet - принудительно устанавливаем белый фон
+    // Для Samsung Internet - принудительно устанавливаем светло-серый фон
     if (document.body) {
-        document.body.style.backgroundColor = '#ffffff';
+        document.body.style.backgroundColor = '#dadbdc';
         document.body.style.color = '#1c2331';
         document.body.classList.remove('theme-dark');
     }
@@ -141,11 +141,11 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const savedTheme = localStorage.getItem("theme");
             
-            // Принудительно устанавливаем светлую тему (белый фон для Samsung)
+            // Принудительно устанавливаем светлую тему (светло-серый фон)
             document.body.classList.remove("theme-dark");
-            document.body.style.backgroundColor = "#ffffff";
+            document.body.style.backgroundColor = "#dadbdc";
             document.body.style.color = "#1c2331";
-            document.documentElement.style.setProperty('--bg-color', '#ffffff');
+            document.documentElement.style.setProperty('--bg-color', '#dadbdc');
             document.documentElement.style.setProperty('--text-color', '#1c2331');
             
             if (themeToggle) themeToggle.checked = false;
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (e) {
             console.warn("localStorage недоступен, используем светлую тему");
             document.body.classList.remove("theme-dark");
-            document.body.style.backgroundColor = "#ffffff";
+            document.body.style.backgroundColor = "#dadbdc";
             document.body.style.color = "#1c2331";
             if (themeToggle) themeToggle.checked = false;
         }
@@ -183,9 +183,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     localStorage.setItem("theme", "dark");
                 } else {
                     document.body.classList.remove("theme-dark");
-                    document.body.style.backgroundColor = "#ffffff";
+                    document.body.style.backgroundColor = "#dadbdc";
                     document.body.style.color = "#1c2331";
-                    document.documentElement.style.setProperty('--bg-color', '#ffffff');
+                    document.documentElement.style.setProperty('--bg-color', '#dadbdc');
                     document.documentElement.style.setProperty('--text-color', '#1c2331');
                     localStorage.setItem("theme", "light");
                 }
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.body.style.color = "#f2f3ee";
                 } else {
                     document.body.classList.remove("theme-dark");
-                    document.body.style.backgroundColor = "#ffffff";
+                    document.body.style.backgroundColor = "#dadbdc";
                     document.body.style.color = "#1c2331";
                 }
             }
@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         localStorage.setItem("theme", "dark");
                     } else {
                         document.body.classList.remove("theme-dark");
-                        document.body.style.backgroundColor = "#ffffff";
+                        document.body.style.backgroundColor = "#dadbdc";
                         document.body.style.color = "#1c2331";
                         localStorage.setItem("theme", "light");
                     }
