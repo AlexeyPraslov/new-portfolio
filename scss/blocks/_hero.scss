@@ -83,7 +83,7 @@
 
     &__text {
         font-size: 24px;
-        margin: 0 0 30px 0; // Увеличим отступ для кнопки
+        margin: 0 0 30px 0;
         opacity: 0;
         animation: slideInDown 0.8s ease-out 0.8s forwards;
 
@@ -111,8 +111,8 @@
     }
 
     &__btn {
-        background-color: #082c5c;
-        color: white;
+        background-color: $color-prussian-blue;
+        color: $color-white;
         display: block;
         padding: 10px 15px;
         width: fit-content;
@@ -125,7 +125,7 @@
 
         &:hover,
         &:focus-visible {
-            background-color: darken(#082c5c, 10%);
+            background-color: darken($color-prussian-blue, 10%);
         }
 
         @include vp-767 {

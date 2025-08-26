@@ -47,15 +47,15 @@
         flex: 1;
         min-width: 250px;
         padding: 16px;
-        border: 2px solid black;
+        border: 2px solid $color-black;
         border-radius: 12px;
-        background-color: #f8f9fa;
+        background-color: $color-alice-blue;
     }
 
     &__block-title {
         font-size: 1.1rem;
         font-weight: 600;
-        color: #333333;
+        color: $color-night-rider;
         margin: 0 0 16px 0;
     }
 
@@ -90,7 +90,7 @@
 
     &__name {
         font-weight: 500;
-        color: #333333;
+        color: $color-night-rider;
         min-width: 200px;
         font-size: 0.95rem;
     }
@@ -101,10 +101,10 @@
         height: 8px;
         border-radius: 4px;
         overflow: hidden;
-        background: #f0f0f0;
+        background: $color-grey-chateau;
 
         &::-webkit-meter-bar {
-            background: #f0f0f0;
+            background: $color-grey-chateau;
             border-radius: 4px;
         }
 
@@ -120,8 +120,8 @@
     }
 
     &__tag {
-        background: #a3a4a5;
-        color: #333333;
+        background: $color-grey-chateau;
+        color: $color-night-rider;
         padding: 8px 16px;
         border-radius: 20px;
         font-weight: 500;
@@ -129,47 +129,14 @@
         transition: all 0.3s ease;
 
         &:hover {
-            background: #6c757d;
-            color: white;
+            background: $color-raven;
+            color: $color-white;
             transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
             padding: 6px 12px;
             font-size: 0.85rem;
-        }
-    }
-}
-
-// Темная тема
-.theme-dark {
-    .skills__block {
-        background: #2a2a2a;
-        border-color: #444444;
-    }
-
-    .skills__block-title {
-        color: #ffffff;
-    }
-
-    .skills__name {
-        color: #ffffff;
-    }
-
-    .skills__tag {
-        background: #444444;
-        color: #ffffff;
-
-        &:hover {
-            background: #5a6268;
-        }
-    }
-
-    .skills__meter {
-        background: #444444;
-
-        &::-webkit-meter-bar {
-            background: #444444;
         }
     }
 }

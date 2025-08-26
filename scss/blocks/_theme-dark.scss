@@ -82,3 +82,35 @@
         animation: pulseGlow 1s ease-out 1.5s forwards;
     }
 }
+
+.theme-dark {
+    .skills__block {
+        background: $color-nero;
+        border-color: $color-charcoal;
+    }
+
+    .skills__block-title {
+        color: $color-white;
+    }
+
+    .skills__name {
+        color: $color-white;
+    }
+
+    .skills__tag {
+        background: $color-charcoal;
+        color: $color-white;
+
+        &:hover {
+            background: $color-shuttle-grey;
+        }
+    }
+
+    .skills__meter {
+        background: $color-charcoal;
+
+        &::-webkit-meter-bar {
+            background: $color-charcoal;
+        }
+    }
+}

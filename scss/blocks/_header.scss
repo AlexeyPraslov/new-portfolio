@@ -75,11 +75,9 @@
             background: black;
             border-radius: 2px;
             transform-origin: center;
-            // Базовое закрытое состояние: три видимые полоски
             opacity: 1;
             transform: none;
 
-            // Закрытие (обратная последовательность): 1) разворот в линию, 2) показать центральную, 3) разъехать линии
             transition: transform 0.25s ease, opacity 0.1s ease 0.25s,
                 top 0.25s ease 0.35s;
 
@@ -273,13 +271,11 @@
     }
 
     &__menu-list {
-        // Десктопное меню - горизонтальное
         display: flex;
         align-items: center;
         gap: 30px;
 
         @include vp-1023 {
-            // Мобильное меню - выпадающее
             position: absolute;
             top: 59px;
             left: 0;
@@ -312,12 +308,10 @@
         transition: color 0.3s ease;
         position: relative;
 
-        // Десктопные стили
         &:hover {
             color: $color-blue-charcoa;
         }
 
-        // Подчеркивание для активной ссылки
         &--active {
             color: $color-blue-charcoa;
 
@@ -333,7 +327,6 @@
         }
 
         @include vp-1023 {
-            // Мобильные стили
             padding: 12px 16px;
             border-bottom: 1px solid $gray-border;
 
@@ -354,20 +347,19 @@
     &--open {
         .header__menu-icon {
             span {
-                // Открытие: 1) свести линии к центру, 2) скрыть центральную, 3) повернуть в крест
                 transition: top 0.25s ease, opacity 0.1s ease 0.25s,
                     transform 0.25s ease 0.35s;
 
                 &:nth-child(1) {
-                    top: 10px; // Сначала двигаем к центру
-                    transform: rotate(45deg); // Затем поворачиваем
+                    top: 10px;
+                    transform: rotate(45deg);
                 }
                 &:nth-child(2) {
-                    opacity: 0; // Скрываем центральную линию
+                    opacity: 0;
                 }
                 &:nth-child(3) {
-                    top: 10px; // Сначала двигаем к центру
-                    transform: rotate(-45deg); // Затем поворачиваем
+                    top: 10px;
+                    transform: rotate(-45deg);
                 }
             }
         }
